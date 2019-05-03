@@ -1,4 +1,34 @@
 # Linux Shell Scripts
+wget --no-check-certificate https://raw.githubusercontent.com/kuoruan/shell-scripts/master/ovz-bbr/ovz-bbr-installer.sh
+chmod +x ovz-bbr-installer.sh
+./ovz-bbr-installer.sh
+另外，有些人的vps是用来做网站或者云盘的，这个时候需要添加BBR加速端口。
+
+安装的时候只配置了一个加速端口，但是你可以配置多端口加速，配置方法非常简单。 修改文件
+
+1
+# vi /usr/local/haproxy-lkl/etc/port-rules
+进入后按“i”
+
+在文件里添加需要加速的端口，每行一条，可以配置单个端口或者端口范围，以 # 开头的行将被忽略。
+
+例如：8800 或者 8800-8810 配置完成之后，按“esc”键退出，然后输入“：wq”保存退出。
+
+再重启 haproxy-lkl 即可。
+
+使用 systemctl 或者 service 命令来启动、停止和重启 HAporxy-lkl：
+
+1
+systemctl {start|stop|restart} haproxy–lkl
+1
+service haproxy–lkl {start|stop|restart}
+/usr/local/haproxy–lkl/etc/haproxy.cfg 这个文件是通过 port-rules 自动生成的，每次启动都会重新生成，所以直接修改它的配置没用。 如果想要自定义配置，请修改启动文件：
+
+1
+/usr/local/haproxy–lkl/sbin/haproxy–lkl
+注意，在实际的安装中发现，部分VPS安装后无法上网，这里可以用下面的卸载命令：
+
+./ovz-bbr-installer.sh uninstall
 
 一些 Linux 脚本
 
