@@ -20,7 +20,7 @@ SERVICE_NAME='haproxy-lkl'
 # Haproxy-lkl 默认安装路径，修改之后需要同时修改服务启动文件
 HAPROXY_LKL_DIR="/usr/local/$SERVICE_NAME"
 
-BASE_URL='https://github.com/kuoruan/shell-scripts/raw/master/ovz-bbr'
+BASE_URL='https://github.com/miaocloud/shell-scripts/raw/master/ovz-bbr'
 HAPROXY_BIN_URL="${BASE_URL}/bin/haproxy.linux2628_x86_64"
 HAPROXY_LKL_BIN_URL="${BASE_URL}/bin/haproxy-lkl.sh"
 HAPROXY_LKL_SERVICE_FILE_DEBIAN_URL="${BASE_URL}/startup/haproxy-lkl.init.debain"
@@ -36,13 +36,9 @@ clear
 
 cat >&2 <<-'EOF'
 #######################################################
-# OpenVZ BBR 一键安装脚本                             #
-# 该脚本用于在 OpenVZ 服务器上安装配置 Google BBR     #
-# 脚本作者: Xingwang Liao <kuoruan@gmail.com>         #
-# 作者博客: https://blog.kuoruan.com/                 #
-# Github: https://github.com/kuoruan/shell-scripts    #
-# QQ交流群: 43391448, 68133628                        #
-#           633945405                                 #
+# OpenVZ BBR 一键安装脚本                              #
+# 该脚本用于在 OpenVZ 服务器上安装配置 Google BBR       #
+# Github: https://github.com/miaocloud/shell-scripts  #
 #######################################################
 EOF
 
